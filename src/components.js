@@ -5,8 +5,8 @@ export function StationList(props) {
   return (
     <div className='station'>
       <ul className='station__list'>
-        {stations.map(s => (
-          <li key={s.id}>
+        {stations.items.map(s => (
+          <li key={s.recordid}>
             Station
           </li>
         ))}
