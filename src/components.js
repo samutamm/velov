@@ -4,8 +4,9 @@ function Station(props) {
   const {station} = props;
   return (
     <div>
-      <p>{station["fields"]["name"]}</p>
-      <p>, {station["fields"]["last_updat"]}</p>
+      <span> Number: {station.number}</span>
+      <span> Name: {station.name}</span>
+      <span> Bikes: {station.available_bikes}/{station.available_bike_stands}</span>
     </div>
   );
 }
@@ -16,7 +17,7 @@ export function StationList(props) {
     <div className='station'>
       <ul className='station__list'>
         {stations.items.map(s => (
-          <li key={s.recordid}>
+          <li key={s.number}>
             <Station station={s} />
           </li>
         ))}
