@@ -1,4 +1,7 @@
 import fetch from 'isomorphic-fetch';
+import {Apikey} from '../apikey.js';
+
+console.log(Apikey());
 
 export const REQUEST_STATIONS = 'REQUEST_STATIONS';
 function requestStations() {
