@@ -29,3 +29,11 @@ export function fetchStations() {
       )
   }
 }
+
+export const CHOOSE_STATION = 'CHOOSE_STATION';
+export function chooseStation(station) {
+  return {
+    type: CHOOSE_STATION,
+    current_station: station
+  }
+}

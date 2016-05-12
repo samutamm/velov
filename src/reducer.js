@@ -1,11 +1,13 @@
 import {List, Map} from 'immutable';
-import {REQUEST_STATIONS, RECEIVE_STATIONS} from './actions';
+import {REQUEST_STATIONS, RECEIVE_STATIONS, CHOOSE_STATION} from './actions';
 
-
-export default function(state = {
+const init = {
   isFetching: false,
-  items: []
-}, action) {
+  items: [],
+  current_station: ''
+};
+
+export default function(state = init, action) {
   switch(action.type) {
     case REQUEST_STATIONS:
       return Object.assign({}, state, {
@@ -17,6 +19,10 @@ export default function(state = {
         items: action.stations,
         lastUpdated: action.receivedAt
       })
+    case CHOOSE_STATION:
+      return Object.assign({}, state, {
+        current_station: action.current_station
+      });
     default:
       return state;
   }

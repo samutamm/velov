@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
-import { StationList } from './containers';
+import { VelovApp } from './containers';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducer';
@@ -19,7 +19,7 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <StationList />
+    <VelovApp />
   </Provider>,
   document.getElementById('app')
 );

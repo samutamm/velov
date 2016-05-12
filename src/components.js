@@ -16,7 +16,7 @@ export function StationList(props) {
   return (
     <div className='station'>
       <ul className='station__list'>
-        {stations.items.map(s => (
+        {stations.map(s => (
           <li key={s.number}>
             <Station station={s} />
           </li>
@@ -24,4 +24,23 @@ export function StationList(props) {
       </ul>
     </div>
   );
+}
+
+function StationChooser(props) {
+    return(
+      <div>
+        <p>ICI STATION CHOOSER!</p>
+      </div>
+    );
+}
+
+export function VelovApp(props) {
+  const {current_station} = props;
+  var view;
+  if (current_station.length < 1) {
+    view = <StationList />;
+  } else {
+    view = <StationChooser />
+  }
+  return( <div> {view} </div> );
 }
